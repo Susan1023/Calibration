@@ -1,0 +1,36 @@
+# Replace every zero or empty value before running FAST-Calib.
+# Fill camera parameters from this camera's NEW chessboard calibration.
+fx: 0.0
+fy: 0.0
+cx: 0.0
+cy: 0.0
+k1: 0.0
+k2: 0.0
+p1: 0.0
+p2: 0.0
+k3: 0.0
+rotate_180: false  # Cameras are upright; use their raw images without rotation.
+
+# Nominal dimensions from the 1400 x 1000 mm target drawing; verify the built board.
+# ArUco deltas are HALF the center-to-center spacing (1100 x 700 mm).
+# Circle deltas are the FULL center-to-center spacing (500 x 400 mm).
+marker_size: 0.20
+delta_width_qr_center: 0.55
+delta_height_qr_center: 0.35
+delta_width_circles: 0.50
+delta_height_circles: 0.40
+circle_radius: 0.12
+
+# Bounds around the target point cloud, in LiDAR coordinates.
+x_min: 0.0
+x_max: 0.0
+y_min: 0.0
+y_max: 0.0
+z_min: 0.0
+z_max: 0.0
+
+lidar_topic: "/livox/lidar"
+bag_path: ""
+image_path: ""
+# Use separate output directories for camera 1 and camera 2.
+output_path: ""

@@ -1,0 +1,43 @@
+validator_node:
+  ros__parameters:
+    image_topic: "/image_raw"
+    cloud_topic: "/cloudpoints"
+
+    fused_topic: "/validator/fused_image"
+    fused_image_qos_reliability: "best_effort"   # best_effort | reliable
+    info_topic: "/validator/validation_info"
+
+    calibration_file: "$(find lidar_cam_validator)/config/sample_calibration.yaml"
+    sync_mode: "approximate"          # approximate | latest | latest_pair
+    latest_pair_time_threshold: 0.5
+    render_rate_hz: 30
+    projection_cache_ttl_sec: 0.1
+    metrics_compute_interval: 3
+    queue_size: 10
+    loop_rate: 30.0
+
+    point_size: 3
+    min_depth: 0.5
+    max_depth: 50.0
+    show_statistics: true
+    show_edge_overlay: false
+    show_depth_colorbar: true
+
+    enable_downsampling: false
+    max_points: 1000000
+
+    enable_accumulation: false
+    accumulation_time_sec: 0.1
+    accumulation_frames: 3
+    accumulation_max_points: 200000
+
+    filter_by_distance: true
+    min_distance: 0.3
+    max_distance: 100.0
+
+    enable_metrics: true
+    edge_threshold: 50
+    edge_distance_threshold: 5.0
+    min_points_for_nmi: 100
+
+    reset_to_defaults: false
